@@ -1,0 +1,9 @@
+stm32/balance_robot_stm/.mxproject
+stm32/balance_robot_stm/Drivers
+stm32/balance_robot_stm/MDK-ARM/balance_robot_stm
+stm32/balance_robot_stm/MDK-ARM/DebugConfig
+stm32/balance_robot_stm/MDK-ARM/RTE
+*.uvguix.asmax
+*.uvoptx
+*.lst
+*.s
