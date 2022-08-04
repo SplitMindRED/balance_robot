@@ -312,7 +312,7 @@
           </ArmAdsMisc>
           <Cads>
             <interw>1</interw>
-            <Optim>7</Optim>
+            <Optim>6</Optim>
             <oTime>0</oTime>
             <SplitLS>0</SplitLS>
             <OneElfS>1</OneElfS>
@@ -333,12 +333,12 @@
             <vShortWch>1</vShortWch>
             <v6Lto>0</v6Lto>
             <v6WtE>0</v6WtE>
-            <v6Rtti>0</v6Rtti>
+            <v6Rtti>1</v6Rtti>
             <VariousControls>
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER,STM32F401xE</Define>
               <Undefine></Undefine>
-              <IncludePath>../Core/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy;../Drivers/CMSIS/Device/ST/STM32F4xx/Include;../Drivers/CMSIS/Include;../../../../_stm32/splitmind_lib/cpp/stm32f401re;..\..\..\..\_stm32\third_party\eigen-3.4.0</IncludePath>
+              <IncludePath>../Core/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy;../Drivers/CMSIS/Device/ST/STM32F4xx/Include;../Drivers/CMSIS/Include;../../../../_stm32/third_party/eigen-3.4.0;../../../../_stm32/splitmind_lib/cpp</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -396,6 +396,11 @@
               <FileName>main_new.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>..\Core\Src\main_new.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>retarget.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Core\Src\retarget.c</FilePath>
             </File>
             <File>
               <FileName>main.c</FileName>
@@ -477,11 +482,6 @@
               <FileName>stm32f4xx_hal_msp.c</FileName>
               <FileType>1</FileType>
               <FilePath>../Core/Src/stm32f4xx_hal_msp.c</FilePath>
-            </File>
-            <File>
-              <FileName>retarget.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Core\Src\retarget.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -584,14 +584,19 @@
           <GroupName>splitmind_lib</GroupName>
           <Files>
             <File>
-              <FileName>splitmind_f401_hal_lib.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\..\_stm32\splitmind_lib\cpp\stm32f401re\splitmind_f401_hal_lib.c</FilePath>
+              <FileName>splitmind_f401_hal_lib.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\..\..\..\_stm32\splitmind_lib\cpp\stm32f401re\splitmind_f401_hal_lib.cpp</FilePath>
             </File>
             <File>
-              <FileName>splitmind_f401_hal_lib.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\..\..\..\_stm32\splitmind_lib\cpp\stm32f401re\splitmind_f401_hal_lib.h</FilePath>
+              <FileName>usart_debug.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\..\..\..\_stm32\splitmind_lib\cpp\stm32f401re\usart\usart_debug.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>motor_driver.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\..\..\..\_stm32\splitmind_lib\cpp\stm32f401re\motor_driver\motor_driver.cpp</FilePath>
             </File>
           </Files>
         </Group>
