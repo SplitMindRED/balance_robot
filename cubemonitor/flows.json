@@ -1,0 +1,1500 @@
+[
+    {
+        "id": "237c305d6e260810",
+        "type": "tab",
+        "label": "Basic_Flow",
+        "disabled": false,
+        "info": "# Basic flow to start with STM32CubeMonitor."
+    },
+    {
+        "id": "6714a5d29021a27e",
+        "type": "ui_chartst",
+        "z": "237c305d6e260810",
+        "group": "f9c34dde.1e2f4",
+        "name": "q",
+        "order": 5,
+        "width": 30,
+        "height": 9,
+        "chartType": "line",
+        "curveType": "linear",
+        "duration": "10",
+        "ymin": "",
+        "ymax": "",
+        "x": 810,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "aa231dfde61a5081",
+        "type": "acquisition out",
+        "z": "237c305d6e260810",
+        "name": "myProbe_Out",
+        "probeconfig": "ca3f9471c9d2f2fb",
+        "x": 540,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "a123da9d41383b51",
+        "type": "acquisition in",
+        "z": "237c305d6e260810",
+        "name": "myProbe_In",
+        "probeconfig": "ca3f9471c9d2f2fb",
+        "x": 130,
+        "y": 280,
+        "wires": [
+            [
+                "8c849ebb38c60158"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "ccb81fcaa0317b45",
+        "type": "variables",
+        "z": "237c305d6e260810",
+        "groupname": "vars",
+        "accesspoint": 0,
+        "execonfig": "06da60fc6f4f544b",
+        "variablelist": [],
+        "triggerstartmode": "manual",
+        "triggername": "motor._data.q",
+        "triggerthreshold": "30000",
+        "frequency": "",
+        "frequencyType": "0",
+        "snapshotheader": "",
+        "mode": "direct",
+        "lastImportedTime": 1659994514085,
+        "openStatus": true,
+        "x": 310,
+        "y": 120,
+        "wires": [
+            [
+                "aa231dfde61a5081"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "60bca99416f13023",
+        "type": "ui_button",
+        "z": "237c305d6e260810",
+        "name": "",
+        "group": "f9c34dde.1e2f4",
+        "order": 3,
+        "width": 5,
+        "height": 1,
+        "passthru": false,
+        "label": "Clear Graphs",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "clear",
+        "x": 1010,
+        "y": 160,
+        "wires": [
+            [
+                "6714a5d29021a27e",
+                "e8cec7c754185c8b",
+                "3bc9cb6080c8b101",
+                "6deda7b13fad4d1e",
+                "2acd3fa9dc708fea",
+                "bdf1ef1bc6c7b49a",
+                "f6901d809b2120f6",
+                "a7fdf5ce092f06c5",
+                "5fa8c84735e5c47a"
+            ]
+        ]
+    },
+    {
+        "id": "6328a529fedbf9b5",
+        "type": "ui_button",
+        "z": "237c305d6e260810",
+        "name": "",
+        "group": "f9c34dde.1e2f4",
+        "order": 1,
+        "width": 5,
+        "height": 1,
+        "passthru": false,
+        "label": "START Acquisition",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "start",
+        "topicType": "str",
+        "x": 110,
+        "y": 80,
+        "wires": [
+            [
+                "ccb81fcaa0317b45"
+            ]
+        ]
+    },
+    {
+        "id": "d699e910c2b125dc",
+        "type": "ui_button",
+        "z": "237c305d6e260810",
+        "name": "",
+        "group": "f9c34dde.1e2f4",
+        "order": 2,
+        "width": 5,
+        "height": 1,
+        "passthru": true,
+        "label": "STOP Acquisition",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "stop",
+        "x": 110,
+        "y": 160,
+        "wires": [
+            [
+                "ccb81fcaa0317b45"
+            ]
+        ]
+    },
+    {
+        "id": "8c849ebb38c60158",
+        "type": "processing",
+        "z": "237c305d6e260810",
+        "groupname": "vars",
+        "groupid": "ccb81fcaa0317b45",
+        "expressions": [],
+        "statistics": [],
+        "logmode": "no",
+        "logformat": "csv",
+        "x": 370,
+        "y": 280,
+        "wires": [
+            [
+                "ab6c73cd5b124762",
+                "c76a1c8ca3423286",
+                "9b7fc22fe26b5f85",
+                "2670dd95202a714f",
+                "ad5364bd103befa9",
+                "e3722420e4f76a61",
+                "820266bdc2111a75"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "e8cec7c754185c8b",
+        "type": "ui_chartst",
+        "z": "237c305d6e260810",
+        "group": "f9c34dde.1e2f4",
+        "name": "w",
+        "order": 6,
+        "width": 15,
+        "height": 9,
+        "chartType": "line",
+        "curveType": "linear",
+        "duration": "10",
+        "ymin": "",
+        "ymax": "",
+        "x": 810,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "3bc9cb6080c8b101",
+        "type": "ui_chartst",
+        "z": "237c305d6e260810",
+        "group": "f9c34dde.1e2f4",
+        "name": "dw",
+        "order": 8,
+        "width": 15,
+        "height": 9,
+        "chartType": "line",
+        "curveType": "linear",
+        "duration": "10",
+        "ymin": "",
+        "ymax": "",
+        "x": 810,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "ab6c73cd5b124762",
+        "type": "switch",
+        "z": "237c305d6e260810",
+        "name": "q",
+        "property": "payload.variablename",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "motor._data.q",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 610,
+        "y": 260,
+        "wires": [
+            [
+                "6714a5d29021a27e"
+            ]
+        ]
+    },
+    {
+        "id": "c76a1c8ca3423286",
+        "type": "switch",
+        "z": "237c305d6e260810",
+        "name": "w",
+        "property": "payload.variablename",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "motor._data.w",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 610,
+        "y": 320,
+        "wires": [
+            [
+                "e8cec7c754185c8b",
+                "f6901d809b2120f6"
+            ]
+        ]
+    },
+    {
+        "id": "9b7fc22fe26b5f85",
+        "type": "switch",
+        "z": "237c305d6e260810",
+        "name": "dw",
+        "property": "payload.variablename",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "motor._data.dw",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 610,
+        "y": 380,
+        "wires": [
+            [
+                "3bc9cb6080c8b101",
+                "a7fdf5ce092f06c5"
+            ]
+        ]
+    },
+    {
+        "id": "2670dd95202a714f",
+        "type": "switch",
+        "z": "237c305d6e260810",
+        "name": "ew",
+        "property": "payload.variablename",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "motor._data.ew",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 610,
+        "y": 440,
+        "wires": [
+            [
+                "6deda7b13fad4d1e",
+                "f6901d809b2120f6"
+            ]
+        ]
+    },
+    {
+        "id": "6deda7b13fad4d1e",
+        "type": "ui_chartst",
+        "z": "237c305d6e260810",
+        "group": "f9c34dde.1e2f4",
+        "name": "ew",
+        "order": 7,
+        "width": 15,
+        "height": 9,
+        "chartType": "line",
+        "curveType": "linear",
+        "duration": "10",
+        "ymin": "",
+        "ymax": "",
+        "x": 810,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "ad5364bd103befa9",
+        "type": "switch",
+        "z": "237c305d6e260810",
+        "name": "edw",
+        "property": "payload.variablename",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "motor._data.edw",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 610,
+        "y": 500,
+        "wires": [
+            [
+                "2acd3fa9dc708fea",
+                "a7fdf5ce092f06c5"
+            ]
+        ]
+    },
+    {
+        "id": "2acd3fa9dc708fea",
+        "type": "ui_chartst",
+        "z": "237c305d6e260810",
+        "group": "f9c34dde.1e2f4",
+        "name": "edw",
+        "order": 9,
+        "width": 15,
+        "height": 9,
+        "chartType": "line",
+        "curveType": "linear",
+        "duration": "10",
+        "ymin": "",
+        "ymax": "",
+        "x": 810,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "e3722420e4f76a61",
+        "type": "switch",
+        "z": "237c305d6e260810",
+        "name": "dt",
+        "property": "payload.variablename",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "motor._dt",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 610,
+        "y": 560,
+        "wires": [
+            [
+                "bdf1ef1bc6c7b49a"
+            ]
+        ]
+    },
+    {
+        "id": "bdf1ef1bc6c7b49a",
+        "type": "ui_chartst",
+        "z": "237c305d6e260810",
+        "group": "f9c34dde.1e2f4",
+        "name": "dt",
+        "order": 10,
+        "width": 15,
+        "height": 9,
+        "chartType": "line",
+        "curveType": "linear",
+        "duration": "10",
+        "ymin": "",
+        "ymax": "",
+        "x": 810,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "f6901d809b2120f6",
+        "type": "ui_chartst",
+        "z": "237c305d6e260810",
+        "group": "f9c34dde.1e2f4",
+        "name": "w_ew",
+        "order": 12,
+        "width": 15,
+        "height": 9,
+        "chartType": "line",
+        "curveType": "linear",
+        "duration": "10",
+        "ymin": "",
+        "ymax": "",
+        "x": 810,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "a7fdf5ce092f06c5",
+        "type": "ui_chartst",
+        "z": "237c305d6e260810",
+        "group": "f9c34dde.1e2f4",
+        "name": "dw_edw",
+        "order": 11,
+        "width": 15,
+        "height": 9,
+        "chartType": "line",
+        "curveType": "linear",
+        "duration": "10",
+        "ymin": "",
+        "ymax": "",
+        "x": 820,
+        "y": 740,
+        "wires": []
+    },
+    {
+        "id": "820266bdc2111a75",
+        "type": "switch",
+        "z": "237c305d6e260810",
+        "name": "Mext",
+        "property": "payload.variablename",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "motor._kf.Mext_plot",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 610,
+        "y": 620,
+        "wires": [
+            [
+                "5fa8c84735e5c47a"
+            ]
+        ]
+    },
+    {
+        "id": "5fa8c84735e5c47a",
+        "type": "ui_chartst",
+        "z": "237c305d6e260810",
+        "group": "f9c34dde.1e2f4",
+        "name": "Mext",
+        "order": 10,
+        "width": 15,
+        "height": 9,
+        "chartType": "line",
+        "curveType": "linear",
+        "duration": "10",
+        "ymin": "",
+        "ymax": "",
+        "x": 810,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "58cbb310ef5fe751",
+        "type": "ui_spacer",
+        "z": "237c305d6e260810",
+        "name": "spacer",
+        "group": "f9c34dde.1e2f4",
+        "order": 4,
+        "width": 15,
+        "height": 1
+    },
+    {
+        "id": "a9f1826278fd9234",
+        "type": "ui_spacer",
+        "z": "237c305d6e260810",
+        "name": "spacer",
+        "group": "f9c34dde.1e2f4",
+        "order": 13,
+        "width": 15,
+        "height": 1
+    },
+    {
+        "id": "b33c724f8eb11142",
+        "type": "ui_spacer",
+        "z": "237c305d6e260810",
+        "name": "spacer",
+        "group": "f9c34dde.1e2f4",
+        "order": 14,
+        "width": 15,
+        "height": 1
+    },
+    {
+        "id": "d039c5d2ce93a153",
+        "type": "ui_spacer",
+        "z": "237c305d6e260810",
+        "name": "spacer",
+        "group": "f9c34dde.1e2f4",
+        "order": 15,
+        "width": 15,
+        "height": 1
+    },
+    {
+        "id": "7f2ca79a7905111c",
+        "type": "ui_spacer",
+        "z": "237c305d6e260810",
+        "name": "spacer",
+        "group": "f9c34dde.1e2f4",
+        "order": 16,
+        "width": 15,
+        "height": 1
+    },
+    {
+        "id": "b6ea5952e4398875",
+        "type": "ui_spacer",
+        "z": "237c305d6e260810",
+        "name": "spacer",
+        "group": "f9c34dde.1e2f4",
+        "order": 17,
+        "width": 15,
+        "height": 1
+    },
+    {
+        "id": "0af77e777664ab24",
+        "type": "ui_spacer",
+        "z": "237c305d6e260810",
+        "name": "spacer",
+        "group": "f9c34dde.1e2f4",
+        "order": 18,
+        "width": 15,
+        "height": 1
+    },
+    {
+        "id": "29ed90e5a55a0264",
+        "type": "ui_spacer",
+        "z": "237c305d6e260810",
+        "name": "spacer",
+        "group": "f9c34dde.1e2f4",
+        "order": 19,
+        "width": 15,
+        "height": 1
+    },
+    {
+        "id": "2147794de81bc3ed",
+        "type": "ui_spacer",
+        "z": "237c305d6e260810",
+        "name": "spacer",
+        "group": "f9c34dde.1e2f4",
+        "order": 20,
+        "width": 15,
+        "height": 1
+    },
+    {
+        "id": "81416fb70a55a4e3",
+        "type": "ui_spacer",
+        "z": "237c305d6e260810",
+        "name": "spacer",
+        "group": "f9c34dde.1e2f4",
+        "order": 21,
+        "width": 15,
+        "height": 1
+    },
+    {
+        "id": "f9c34dde.1e2f4",
+        "type": "ui_group",
+        "name": "Chart",
+        "tab": "17d09b07.741a55",
+        "order": 1,
+        "disp": true,
+        "width": 30,
+        "collapse": false
+    },
+    {
+        "id": "ca3f9471c9d2f2fb",
+        "type": "probe",
+        "probeid": "066DFF333536414257075831",
+        "probename": "ST-Link v2-1B (...75831)",
+        "protocol": "SWD",
+        "frequency": "1.8 MHz - Default",
+        "probeproperty": "{\"SWD\":[\"4.6 MHz\",\"1.8 MHz - Default\",\"950 kHz\",\"400 kHz\",\"150 kHz\"],\"JTAG\":[\"18 MHz\",\"9 MHz\",\"4.5 MHz\",\"2.25 MHz\",\"1.12 MHz - Default\",\"560 kHz\",\"280 kHz\",\"140 kHz\"]}",
+        "probeversion": "ST Link firmware version V2.J33",
+        "connectionType": "p2p"
+    },
+    {
+        "id": "06da60fc6f4f544b",
+        "type": "exe-config",
+        "name": "vars",
+        "exefile": "D:\\_Projects\\balance_robot\\stm32\\balance_robot_stm\\MDK-ARM\\balance_robot_stm\\balance_robot_stm.axf",
+        "exefolder": "D:\\_Projects\\balance_robot\\stm32\\balance_robot_stm\\MDK-ARM\\balance_robot_stm",
+        "exevariablelist": [
+            {
+                "address": "0x0803bfb0",
+                "name": "AHBPrescTable[0]",
+                "type": 1
+            },
+            {
+                "address": "0x0803bfba",
+                "name": "AHBPrescTable[10]",
+                "type": 1
+            },
+            {
+                "address": "0x0803bfbb",
+                "name": "AHBPrescTable[11]",
+                "type": 1
+            },
+            {
+                "address": "0x0803bfbc",
+                "name": "AHBPrescTable[12]",
+                "type": 1
+            },
+            {
+                "address": "0x0803bfbd",
+                "name": "AHBPrescTable[13]",
+                "type": 1
+            },
+            {
+                "address": "0x0803bfbe",
+                "name": "AHBPrescTable[14]",
+                "type": 1
+            },
+            {
+                "address": "0x0803bfbf",
+                "name": "AHBPrescTable[15]",
+                "type": 1
+            },
+            {
+                "address": "0x0803bfb1",
+                "name": "AHBPrescTable[1]",
+                "type": 1
+            },
+            {
+                "address": "0x0803bfb2",
+                "name": "AHBPrescTable[2]",
+                "type": 1
+            },
+            {
+                "address": "0x0803bfb3",
+                "name": "AHBPrescTable[3]",
+                "type": 1
+            },
+            {
+                "address": "0x0803bfb4",
+                "name": "AHBPrescTable[4]",
+                "type": 1
+            },
+            {
+                "address": "0x0803bfb5",
+                "name": "AHBPrescTable[5]",
+                "type": 1
+            },
+            {
+                "address": "0x0803bfb6",
+                "name": "AHBPrescTable[6]",
+                "type": 1
+            },
+            {
+                "address": "0x0803bfb7",
+                "name": "AHBPrescTable[7]",
+                "type": 1
+            },
+            {
+                "address": "0x0803bfb8",
+                "name": "AHBPrescTable[8]",
+                "type": 1
+            },
+            {
+                "address": "0x0803bfb9",
+                "name": "AHBPrescTable[9]",
+                "type": 1
+            },
+            {
+                "address": "0x0803bfc0",
+                "name": "APBPrescTable[0]",
+                "type": 1
+            },
+            {
+                "address": "0x0803bfc1",
+                "name": "APBPrescTable[1]",
+                "type": 1
+            },
+            {
+                "address": "0x0803bfc2",
+                "name": "APBPrescTable[2]",
+                "type": 1
+            },
+            {
+                "address": "0x0803bfc3",
+                "name": "APBPrescTable[3]",
+                "type": 1
+            },
+            {
+                "address": "0x0803bfc4",
+                "name": "APBPrescTable[4]",
+                "type": 1
+            },
+            {
+                "address": "0x0803bfc5",
+                "name": "APBPrescTable[5]",
+                "type": 1
+            },
+            {
+                "address": "0x0803bfc6",
+                "name": "APBPrescTable[6]",
+                "type": 1
+            },
+            {
+                "address": "0x0803bfc7",
+                "name": "APBPrescTable[7]",
+                "type": 1
+            },
+            {
+                "address": "0x200011d0",
+                "name": "chi_params.J",
+                "type": 10
+            },
+            {
+                "address": "0x200011c8",
+                "name": "chi_params.Km",
+                "type": 10
+            },
+            {
+                "address": "0x200011c0",
+                "name": "chi_params.Kw",
+                "type": 10
+            },
+            {
+                "address": "0x200011b0",
+                "name": "chi_params.L",
+                "type": 10
+            },
+            {
+                "address": "0x200011d8",
+                "name": "chi_params.Lam",
+                "type": 10
+            },
+            {
+                "address": "0x200011b8",
+                "name": "chi_params.R",
+                "type": 10
+            },
+            {
+                "address": "0x200011e0",
+                "name": "chi_params.ticks_per_round",
+                "type": 5
+            },
+            {
+                "address": "0x200011e8",
+                "name": "config[0]",
+                "type": 1
+            },
+            {
+                "address": "0x200011e9",
+                "name": "config[1]",
+                "type": 1
+            },
+            {
+                "address": "0x200011ea",
+                "name": "configuration",
+                "type": 3
+            },
+            {
+                "address": "0x200011ec",
+                "name": "current",
+                "type": 4
+            },
+            {
+                "address": "0x20001234",
+                "name": "hi2c1.Devaddress",
+                "type": 5
+            },
+            {
+                "address": "0x20001230",
+                "name": "hi2c1.ErrorCode",
+                "type": 5
+            },
+            {
+                "address": "0x20001240",
+                "name": "hi2c1.EventCount",
+                "type": 5
+            },
+            {
+                "address": "0x20001228",
+                "name": "hi2c1.hdmarx",
+                "type": 5
+            },
+            {
+                "address": "0x20001224",
+                "name": "hi2c1.hdmatx",
+                "type": 5
+            },
+            {
+                "address": "0x20001200",
+                "name": "hi2c1.Init.AddressingMode",
+                "type": 5
+            },
+            {
+                "address": "0x200011f4",
+                "name": "hi2c1.Init.ClockSpeed",
+                "type": 5
+            },
+            {
+                "address": "0x20001204",
+                "name": "hi2c1.Init.DualAddressMode",
+                "type": 5
+            },
+            {
+                "address": "0x200011f8",
+                "name": "hi2c1.Init.DutyCycle",
+                "type": 5
+            },
+            {
+                "address": "0x2000120c",
+                "name": "hi2c1.Init.GeneralCallMode",
+                "type": 5
+            },
+            {
+                "address": "0x20001210",
+                "name": "hi2c1.Init.NoStretchMode",
+                "type": 5
+            },
+            {
+                "address": "0x200011fc",
+                "name": "hi2c1.Init.OwnAddress1",
+                "type": 5
+            },
+            {
+                "address": "0x20001208",
+                "name": "hi2c1.Init.OwnAddress2",
+                "type": 5
+            },
+            {
+                "address": "0x200011f0",
+                "name": "hi2c1.Instance",
+                "type": 5
+            },
+            {
+                "address": "0x2000122c",
+                "name": "hi2c1.Lock",
+                "type": 2
+            },
+            {
+                "address": "0x20001238",
+                "name": "hi2c1.Memaddress",
+                "type": 5
+            },
+            {
+                "address": "0x2000123c",
+                "name": "hi2c1.MemaddSize",
+                "type": 5
+            },
+            {
+                "address": "0x2000122e",
+                "name": "hi2c1.Mode",
+                "type": 2
+            },
+            {
+                "address": "0x20001214",
+                "name": "hi2c1.pBuffPtr",
+                "type": 5
+            },
+            {
+                "address": "0x20001220",
+                "name": "hi2c1.PreviousState",
+                "type": 5
+            },
+            {
+                "address": "0x2000122d",
+                "name": "hi2c1.State",
+                "type": 2
+            },
+            {
+                "address": "0x2000121a",
+                "name": "hi2c1.XferCount",
+                "type": 3
+            },
+            {
+                "address": "0x2000121c",
+                "name": "hi2c1.XferOptions",
+                "type": 5
+            },
+            {
+                "address": "0x20001218",
+                "name": "hi2c1.XferSize",
+                "type": 3
+            },
+            {
+                "address": "0x20001260",
+                "name": "htim11.Channel",
+                "type": 2
+            },
+            {
+                "address": "0x20001286",
+                "name": "htim11.ChannelNState[0]",
+                "type": 2
+            },
+            {
+                "address": "0x20001287",
+                "name": "htim11.ChannelNState[1]",
+                "type": 2
+            },
+            {
+                "address": "0x20001288",
+                "name": "htim11.ChannelNState[2]",
+                "type": 2
+            },
+            {
+                "address": "0x20001289",
+                "name": "htim11.ChannelNState[3]",
+                "type": 2
+            },
+            {
+                "address": "0x20001282",
+                "name": "htim11.ChannelState[0]",
+                "type": 2
+            },
+            {
+                "address": "0x20001283",
+                "name": "htim11.ChannelState[1]",
+                "type": 2
+            },
+            {
+                "address": "0x20001284",
+                "name": "htim11.ChannelState[2]",
+                "type": 2
+            },
+            {
+                "address": "0x20001285",
+                "name": "htim11.ChannelState[3]",
+                "type": 2
+            },
+            {
+                "address": "0x2000128a",
+                "name": "htim11.DMABurstState",
+                "type": 2
+            },
+            {
+                "address": "0x20001264",
+                "name": "htim11.hdma[0]",
+                "type": 5
+            },
+            {
+                "address": "0x20001268",
+                "name": "htim11.hdma[1]",
+                "type": 5
+            },
+            {
+                "address": "0x2000126c",
+                "name": "htim11.hdma[2]",
+                "type": 5
+            },
+            {
+                "address": "0x20001270",
+                "name": "htim11.hdma[3]",
+                "type": 5
+            },
+            {
+                "address": "0x20001274",
+                "name": "htim11.hdma[4]",
+                "type": 5
+            },
+            {
+                "address": "0x20001278",
+                "name": "htim11.hdma[5]",
+                "type": 5
+            },
+            {
+                "address": "0x2000127c",
+                "name": "htim11.hdma[6]",
+                "type": 5
+            },
+            {
+                "address": "0x2000125c",
+                "name": "htim11.Init.AutoReloadPreload",
+                "type": 5
+            },
+            {
+                "address": "0x20001254",
+                "name": "htim11.Init.ClockDivision",
+                "type": 5
+            },
+            {
+                "address": "0x2000124c",
+                "name": "htim11.Init.CounterMode",
+                "type": 5
+            },
+            {
+                "address": "0x20001250",
+                "name": "htim11.Init.Period",
+                "type": 5
+            },
+            {
+                "address": "0x20001248",
+                "name": "htim11.Init.Prescaler",
+                "type": 5
+            },
+            {
+                "address": "0x20001258",
+                "name": "htim11.Init.RepetitionCounter",
+                "type": 5
+            },
+            {
+                "address": "0x20001244",
+                "name": "htim11.Instance",
+                "type": 5
+            },
+            {
+                "address": "0x20001280",
+                "name": "htim11.Lock",
+                "type": 2
+            },
+            {
+                "address": "0x20001281",
+                "name": "htim11.State",
+                "type": 2
+            },
+            {
+                "address": "0x200012a8",
+                "name": "htim4.Channel",
+                "type": 2
+            },
+            {
+                "address": "0x200012ce",
+                "name": "htim4.ChannelNState[0]",
+                "type": 2
+            },
+            {
+                "address": "0x200012cf",
+                "name": "htim4.ChannelNState[1]",
+                "type": 2
+            },
+            {
+                "address": "0x200012d0",
+                "name": "htim4.ChannelNState[2]",
+                "type": 2
+            },
+            {
+                "address": "0x200012d1",
+                "name": "htim4.ChannelNState[3]",
+                "type": 2
+            },
+            {
+                "address": "0x200012ca",
+                "name": "htim4.ChannelState[0]",
+                "type": 2
+            },
+            {
+                "address": "0x200012cb",
+                "name": "htim4.ChannelState[1]",
+                "type": 2
+            },
+            {
+                "address": "0x200012cc",
+                "name": "htim4.ChannelState[2]",
+                "type": 2
+            },
+            {
+                "address": "0x200012cd",
+                "name": "htim4.ChannelState[3]",
+                "type": 2
+            },
+            {
+                "address": "0x200012d2",
+                "name": "htim4.DMABurstState",
+                "type": 2
+            },
+            {
+                "address": "0x200012ac",
+                "name": "htim4.hdma[0]",
+                "type": 5
+            },
+            {
+                "address": "0x200012b0",
+                "name": "htim4.hdma[1]",
+                "type": 5
+            },
+            {
+                "address": "0x200012b4",
+                "name": "htim4.hdma[2]",
+                "type": 5
+            },
+            {
+                "address": "0x200012b8",
+                "name": "htim4.hdma[3]",
+                "type": 5
+            },
+            {
+                "address": "0x200012bc",
+                "name": "htim4.hdma[4]",
+                "type": 5
+            },
+            {
+                "address": "0x200012c0",
+                "name": "htim4.hdma[5]",
+                "type": 5
+            },
+            {
+                "address": "0x200012c4",
+                "name": "htim4.hdma[6]",
+                "type": 5
+            },
+            {
+                "address": "0x200012a4",
+                "name": "htim4.Init.AutoReloadPreload",
+                "type": 5
+            },
+            {
+                "address": "0x2000129c",
+                "name": "htim4.Init.ClockDivision",
+                "type": 5
+            },
+            {
+                "address": "0x20001294",
+                "name": "htim4.Init.CounterMode",
+                "type": 5
+            },
+            {
+                "address": "0x20001298",
+                "name": "htim4.Init.Period",
+                "type": 5
+            },
+            {
+                "address": "0x20001290",
+                "name": "htim4.Init.Prescaler",
+                "type": 5
+            },
+            {
+                "address": "0x200012a0",
+                "name": "htim4.Init.RepetitionCounter",
+                "type": 5
+            },
+            {
+                "address": "0x2000128c",
+                "name": "htim4.Instance",
+                "type": 5
+            },
+            {
+                "address": "0x200012c8",
+                "name": "htim4.Lock",
+                "type": 2
+            },
+            {
+                "address": "0x200012c9",
+                "name": "htim4.State",
+                "type": 2
+            },
+            {
+                "address": "0x20001314",
+                "name": "huart2.ErrorCode",
+                "type": 5
+            },
+            {
+                "address": "0x20001311",
+                "name": "huart2.gState",
+                "type": 2
+            },
+            {
+                "address": "0x2000130c",
+                "name": "huart2.hdmarx",
+                "type": 5
+            },
+            {
+                "address": "0x20001308",
+                "name": "huart2.hdmatx",
+                "type": 5
+            },
+            {
+                "address": "0x200012d8",
+                "name": "huart2.Init.BaudRate",
+                "type": 5
+            },
+            {
+                "address": "0x200012ec",
+                "name": "huart2.Init.HwFlowCtl",
+                "type": 5
+            },
+            {
+                "address": "0x200012e8",
+                "name": "huart2.Init.Mode",
+                "type": 5
+            },
+            {
+                "address": "0x200012f0",
+                "name": "huart2.Init.OverSampling",
+                "type": 5
+            },
+            {
+                "address": "0x200012e4",
+                "name": "huart2.Init.Parity",
+                "type": 5
+            },
+            {
+                "address": "0x200012e0",
+                "name": "huart2.Init.StopBits",
+                "type": 5
+            },
+            {
+                "address": "0x200012dc",
+                "name": "huart2.Init.WordLength",
+                "type": 5
+            },
+            {
+                "address": "0x200012d4",
+                "name": "huart2.Instance",
+                "type": 5
+            },
+            {
+                "address": "0x20001310",
+                "name": "huart2.Lock",
+                "type": 2
+            },
+            {
+                "address": "0x200012fc",
+                "name": "huart2.pRxBuffPtr",
+                "type": 5
+            },
+            {
+                "address": "0x200012f4",
+                "name": "huart2.pTxBuffPtr",
+                "type": 5
+            },
+            {
+                "address": "0x20001304",
+                "name": "huart2.ReceptionType",
+                "type": 5
+            },
+            {
+                "address": "0x20001312",
+                "name": "huart2.RxState",
+                "type": 2
+            },
+            {
+                "address": "0x20001302",
+                "name": "huart2.RxXferCount",
+                "type": 3
+            },
+            {
+                "address": "0x20001300",
+                "name": "huart2.RxXferSize",
+                "type": 3
+            },
+            {
+                "address": "0x200012fa",
+                "name": "huart2.TxXferCount",
+                "type": 3
+            },
+            {
+                "address": "0x200012f8",
+                "name": "huart2.TxXferSize",
+                "type": 3
+            },
+            {
+                "address": "0x20001340",
+                "name": "maxon_params.J",
+                "type": 10
+            },
+            {
+                "address": "0x20001338",
+                "name": "maxon_params.Km",
+                "type": 10
+            },
+            {
+                "address": "0x20001330",
+                "name": "maxon_params.Kw",
+                "type": 10
+            },
+            {
+                "address": "0x20001320",
+                "name": "maxon_params.L",
+                "type": 10
+            },
+            {
+                "address": "0x20001348",
+                "name": "maxon_params.Lam",
+                "type": 10
+            },
+            {
+                "address": "0x20001328",
+                "name": "maxon_params.R",
+                "type": 10
+            },
+            {
+                "address": "0x20001350",
+                "name": "maxon_params.ticks_per_round",
+                "type": 5
+            },
+            {
+                "address": "0x200013a0",
+                "name": "motor._cmd.M_ext",
+                "type": 10,
+                "checked": false
+            },
+            {
+                "address": "0x20001398",
+                "name": "motor._cmd.u",
+                "type": 10
+            },
+            {
+                "address": "0x200013c0",
+                "name": "motor._data.dw",
+                "type": 10,
+                "checked": true
+            },
+            {
+                "address": "0x200013d8",
+                "name": "motor._data.edw",
+                "type": 10,
+                "checked": true
+            },
+            {
+                "address": "0x200013d0",
+                "name": "motor._data.ew",
+                "type": 10,
+                "checked": true
+            },
+            {
+                "address": "0x200013c8",
+                "name": "motor._data.I",
+                "type": 10
+            },
+            {
+                "address": "0x200013a8",
+                "name": "motor._data.q",
+                "type": 10,
+                "checked": true
+            },
+            {
+                "address": "0x200013b0",
+                "name": "motor._data.q_deg",
+                "type": 10
+            },
+            {
+                "address": "0x200013b8",
+                "name": "motor._data.w",
+                "type": 10,
+                "checked": true
+            },
+            {
+                "address": "0x20001530",
+                "name": "motor._dt",
+                "type": 9,
+                "checked": true
+            },
+            {
+                "address": "0x20001528",
+                "name": "motor._kf.Mext_plot",
+                "type": 10,
+                "checked": true
+            },
+            {
+                "address": "0x20001380",
+                "name": "motor._param.J",
+                "type": 10
+            },
+            {
+                "address": "0x20001378",
+                "name": "motor._param.Km",
+                "type": 10
+            },
+            {
+                "address": "0x20001370",
+                "name": "motor._param.Kw",
+                "type": 10
+            },
+            {
+                "address": "0x20001360",
+                "name": "motor._param.L",
+                "type": 10
+            },
+            {
+                "address": "0x20001388",
+                "name": "motor._param.Lam",
+                "type": 10
+            },
+            {
+                "address": "0x20001368",
+                "name": "motor._param.R",
+                "type": 10
+            },
+            {
+                "address": "0x20001390",
+                "name": "motor._param.ticks_per_round",
+                "type": 5
+            },
+            {
+                "address": "0x20001358",
+                "name": "motor.time_start",
+                "type": 5
+            },
+            {
+                "address": "0x20001538",
+                "name": "reg",
+                "type": 1
+            },
+            {
+                "address": "0x2000153c",
+                "name": "st_ms",
+                "type": 5
+            },
+            {
+                "address": "0x2000075c",
+                "name": "std::__1::__start_std_streams.UseCount",
+                "type": 5
+            },
+            {
+                "address": "0x2000000c",
+                "name": "SystemCoreClock",
+                "type": 5
+            },
+            {
+                "address": "0x20001540",
+                "name": "ticks",
+                "type": 6
+            },
+            {
+                "address": "0x20001544",
+                "name": "uwTick",
+                "type": 5
+            },
+            {
+                "address": "0x2000001c",
+                "name": "uwTickFreq",
+                "type": 2
+            },
+            {
+                "address": "0x20000020",
+                "name": "uwTickPrio",
+                "type": 5
+            },
+            {
+                "address": "0x20001548",
+                "name": "var",
+                "type": 5,
+                "checked": false
+            }
+        ],
+        "expand": true,
+        "filename": "balance_robot_stm.axf",
+        "exeModifiedTime": 1659994283140,
+        "configLastUpdate": 1659994513682
+    },
+    {
+        "id": "17d09b07.741a55",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    }
+]

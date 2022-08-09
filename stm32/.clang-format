@@ -1,0 +1,10 @@
+---
+BasedOnStyle: LLVM
+IndentWidth: 2
+---
+Language: Cpp
+DerivePointerAlignment: false
+PointerAlignment: Left
+UseTab: Never
+BreakBeforeBraces: Allman
+ColumnLimit: 0

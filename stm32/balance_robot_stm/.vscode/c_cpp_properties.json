@@ -1,0 +1,31 @@
+{
+    "configurations": [
+        {
+            "name": "Win32",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "C:/Keil_v5/ARM/ARMCC/**",
+                "D:/_Projects/_stm32/splitmind_lib/cpp/**",
+                "D:/_Projects/_stm32/splitmind_lib/cpp/",
+                "D:/_Projects/_stm32/third_party/eigen-3.4.0/**",
+                "D:/_Projects/_stm32/third_party/eigen-3.4.0"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "USE_HAL_DRIVER",
+                "STM32F401xE",
+                "_UNICODE"
+            ],
+            "cStandard": "c17",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "gcc-arm",
+            "compilerPath": "${env:ARMGCC_DIR}/arm-none-eabi-gcc.exe",
+            "compilerArgs": [
+                "-mcpu=cortex-m4",
+                "-mthumb"
+            ]
+        }
+    ],
+    "version": 4
+}
