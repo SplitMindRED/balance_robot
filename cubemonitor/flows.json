@@ -64,7 +64,7 @@
         "frequencyType": "0",
         "snapshotheader": "",
         "mode": "direct",
-        "lastImportedTime": 1659994514085,
+        "lastImportedTime": 1660593381540,
         "openStatus": true,
         "x": 310,
         "y": 120,
@@ -105,7 +105,8 @@
                 "bdf1ef1bc6c7b49a",
                 "f6901d809b2120f6",
                 "a7fdf5ce092f06c5",
-                "5fa8c84735e5c47a"
+                "5fa8c84735e5c47a",
+                "c362fcdfb546db0e"
             ]
         ]
     },
@@ -183,7 +184,8 @@
                 "2670dd95202a714f",
                 "ad5364bd103befa9",
                 "e3722420e4f76a61",
-                "820266bdc2111a75"
+                "820266bdc2111a75",
+                "a82cfb1f15ea2684"
             ],
             []
         ]
@@ -447,7 +449,7 @@
         "ymin": "",
         "ymax": "",
         "x": 810,
-        "y": 680,
+        "y": 780,
         "wires": []
     },
     {
@@ -465,7 +467,7 @@
         "ymin": "",
         "ymax": "",
         "x": 820,
-        "y": 740,
+        "y": 820,
         "wires": []
     },
     {
@@ -509,6 +511,49 @@
         "ymax": "",
         "x": 810,
         "y": 620,
+        "wires": []
+    },
+    {
+        "id": "a82cfb1f15ea2684",
+        "type": "switch",
+        "z": "237c305d6e260810",
+        "name": "eI",
+        "property": "payload.variablename",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "motor._data.eI",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 610,
+        "y": 680,
+        "wires": [
+            [
+                "c362fcdfb546db0e"
+            ]
+        ]
+    },
+    {
+        "id": "c362fcdfb546db0e",
+        "type": "ui_chartst",
+        "z": "237c305d6e260810",
+        "group": "f9c34dde.1e2f4",
+        "name": "eI",
+        "order": 10,
+        "width": 15,
+        "height": 9,
+        "chartType": "line",
+        "curveType": "linear",
+        "duration": "10",
+        "ymin": "",
+        "ymax": "",
+        "x": 810,
+        "y": 680,
         "wires": []
     },
     {
@@ -640,810 +685,1237 @@
         "exefolder": "D:\\_Projects\\balance_robot\\stm32\\balance_robot_stm\\MDK-ARM\\balance_robot_stm",
         "exevariablelist": [
             {
-                "address": "0x0803bfb0",
+                "address": "0x0803b970",
                 "name": "AHBPrescTable[0]",
                 "type": 1
             },
             {
-                "address": "0x0803bfba",
+                "address": "0x0803b97a",
                 "name": "AHBPrescTable[10]",
                 "type": 1
             },
             {
-                "address": "0x0803bfbb",
+                "address": "0x0803b97b",
                 "name": "AHBPrescTable[11]",
                 "type": 1
             },
             {
-                "address": "0x0803bfbc",
+                "address": "0x0803b97c",
                 "name": "AHBPrescTable[12]",
                 "type": 1
             },
             {
-                "address": "0x0803bfbd",
+                "address": "0x0803b97d",
                 "name": "AHBPrescTable[13]",
                 "type": 1
             },
             {
-                "address": "0x0803bfbe",
+                "address": "0x0803b97e",
                 "name": "AHBPrescTable[14]",
                 "type": 1
             },
             {
-                "address": "0x0803bfbf",
+                "address": "0x0803b97f",
                 "name": "AHBPrescTable[15]",
                 "type": 1
             },
             {
-                "address": "0x0803bfb1",
+                "address": "0x0803b971",
                 "name": "AHBPrescTable[1]",
                 "type": 1
             },
             {
-                "address": "0x0803bfb2",
+                "address": "0x0803b972",
                 "name": "AHBPrescTable[2]",
                 "type": 1
             },
             {
-                "address": "0x0803bfb3",
+                "address": "0x0803b973",
                 "name": "AHBPrescTable[3]",
                 "type": 1
             },
             {
-                "address": "0x0803bfb4",
+                "address": "0x0803b974",
                 "name": "AHBPrescTable[4]",
                 "type": 1
             },
             {
-                "address": "0x0803bfb5",
+                "address": "0x0803b975",
                 "name": "AHBPrescTable[5]",
                 "type": 1
             },
             {
-                "address": "0x0803bfb6",
+                "address": "0x0803b976",
                 "name": "AHBPrescTable[6]",
                 "type": 1
             },
             {
-                "address": "0x0803bfb7",
+                "address": "0x0803b977",
                 "name": "AHBPrescTable[7]",
                 "type": 1
             },
             {
-                "address": "0x0803bfb8",
+                "address": "0x0803b978",
                 "name": "AHBPrescTable[8]",
                 "type": 1
             },
             {
-                "address": "0x0803bfb9",
+                "address": "0x0803b979",
                 "name": "AHBPrescTable[9]",
                 "type": 1
             },
             {
-                "address": "0x0803bfc0",
+                "address": "0x0803b980",
                 "name": "APBPrescTable[0]",
                 "type": 1
             },
             {
-                "address": "0x0803bfc1",
+                "address": "0x0803b981",
                 "name": "APBPrescTable[1]",
                 "type": 1
             },
             {
-                "address": "0x0803bfc2",
+                "address": "0x0803b982",
                 "name": "APBPrescTable[2]",
                 "type": 1
             },
             {
-                "address": "0x0803bfc3",
+                "address": "0x0803b983",
                 "name": "APBPrescTable[3]",
                 "type": 1
             },
             {
-                "address": "0x0803bfc4",
+                "address": "0x0803b984",
                 "name": "APBPrescTable[4]",
                 "type": 1
             },
             {
-                "address": "0x0803bfc5",
+                "address": "0x0803b985",
                 "name": "APBPrescTable[5]",
                 "type": 1
             },
             {
-                "address": "0x0803bfc6",
+                "address": "0x0803b986",
                 "name": "APBPrescTable[6]",
                 "type": 1
             },
             {
-                "address": "0x0803bfc7",
+                "address": "0x0803b987",
                 "name": "APBPrescTable[7]",
                 "type": 1
             },
             {
-                "address": "0x200011d0",
+                "address": "0x200011ac",
                 "name": "chi_params.J",
-                "type": 10
+                "type": 9
             },
             {
-                "address": "0x200011c8",
+                "address": "0x200011a8",
                 "name": "chi_params.Km",
-                "type": 10
+                "type": 9
             },
             {
-                "address": "0x200011c0",
+                "address": "0x200011a4",
                 "name": "chi_params.Kw",
-                "type": 10
+                "type": 9
+            },
+            {
+                "address": "0x2000119c",
+                "name": "chi_params.L",
+                "type": 9
             },
             {
                 "address": "0x200011b0",
-                "name": "chi_params.L",
-                "type": 10
-            },
-            {
-                "address": "0x200011d8",
                 "name": "chi_params.Lam",
-                "type": 10
+                "type": 9
             },
             {
-                "address": "0x200011b8",
+                "address": "0x200011a0",
                 "name": "chi_params.R",
-                "type": 10
+                "type": 9
             },
             {
-                "address": "0x200011e0",
+                "address": "0x200011b4",
                 "name": "chi_params.ticks_per_round",
                 "type": 5
             },
             {
-                "address": "0x200011e8",
+                "address": "0x200011b8",
                 "name": "config[0]",
                 "type": 1
             },
             {
-                "address": "0x200011e9",
+                "address": "0x200011b9",
                 "name": "config[1]",
                 "type": 1
             },
             {
-                "address": "0x200011ea",
+                "address": "0x200011ba",
                 "name": "configuration",
                 "type": 3
             },
             {
-                "address": "0x200011ec",
+                "address": "0x200011bc",
                 "name": "current",
                 "type": 4
             },
             {
-                "address": "0x20001234",
+                "address": "0x20001204",
                 "name": "hi2c1.Devaddress",
                 "type": 5
             },
             {
-                "address": "0x20001230",
+                "address": "0x20001200",
                 "name": "hi2c1.ErrorCode",
                 "type": 5
             },
             {
-                "address": "0x20001240",
+                "address": "0x20001210",
                 "name": "hi2c1.EventCount",
                 "type": 5
             },
             {
-                "address": "0x20001228",
+                "address": "0x200011f8",
                 "name": "hi2c1.hdmarx",
                 "type": 5
             },
             {
-                "address": "0x20001224",
+                "address": "0x200011f4",
                 "name": "hi2c1.hdmatx",
                 "type": 5
             },
             {
-                "address": "0x20001200",
+                "address": "0x200011d0",
                 "name": "hi2c1.Init.AddressingMode",
                 "type": 5
             },
             {
-                "address": "0x200011f4",
+                "address": "0x200011c4",
                 "name": "hi2c1.Init.ClockSpeed",
                 "type": 5
             },
             {
-                "address": "0x20001204",
+                "address": "0x200011d4",
                 "name": "hi2c1.Init.DualAddressMode",
                 "type": 5
             },
             {
-                "address": "0x200011f8",
+                "address": "0x200011c8",
                 "name": "hi2c1.Init.DutyCycle",
                 "type": 5
             },
             {
-                "address": "0x2000120c",
+                "address": "0x200011dc",
                 "name": "hi2c1.Init.GeneralCallMode",
                 "type": 5
             },
             {
-                "address": "0x20001210",
+                "address": "0x200011e0",
                 "name": "hi2c1.Init.NoStretchMode",
                 "type": 5
             },
             {
-                "address": "0x200011fc",
+                "address": "0x200011cc",
                 "name": "hi2c1.Init.OwnAddress1",
                 "type": 5
             },
             {
-                "address": "0x20001208",
+                "address": "0x200011d8",
                 "name": "hi2c1.Init.OwnAddress2",
                 "type": 5
             },
             {
-                "address": "0x200011f0",
+                "address": "0x200011c0",
                 "name": "hi2c1.Instance",
                 "type": 5
             },
             {
-                "address": "0x2000122c",
+                "address": "0x200011fc",
                 "name": "hi2c1.Lock",
                 "type": 2
             },
             {
-                "address": "0x20001238",
+                "address": "0x20001208",
                 "name": "hi2c1.Memaddress",
                 "type": 5
             },
             {
-                "address": "0x2000123c",
+                "address": "0x2000120c",
                 "name": "hi2c1.MemaddSize",
                 "type": 5
             },
             {
-                "address": "0x2000122e",
+                "address": "0x200011fe",
                 "name": "hi2c1.Mode",
                 "type": 2
             },
             {
-                "address": "0x20001214",
+                "address": "0x200011e4",
                 "name": "hi2c1.pBuffPtr",
                 "type": 5
             },
             {
-                "address": "0x20001220",
+                "address": "0x200011f0",
                 "name": "hi2c1.PreviousState",
                 "type": 5
             },
             {
-                "address": "0x2000122d",
+                "address": "0x200011fd",
                 "name": "hi2c1.State",
                 "type": 2
             },
             {
-                "address": "0x2000121a",
+                "address": "0x200011ea",
                 "name": "hi2c1.XferCount",
                 "type": 3
             },
             {
-                "address": "0x2000121c",
+                "address": "0x200011ec",
                 "name": "hi2c1.XferOptions",
                 "type": 5
             },
             {
-                "address": "0x20001218",
+                "address": "0x200011e8",
                 "name": "hi2c1.XferSize",
                 "type": 3
             },
             {
-                "address": "0x20001260",
+                "address": "0x20001230",
                 "name": "htim11.Channel",
                 "type": 2
             },
             {
-                "address": "0x20001286",
+                "address": "0x20001256",
                 "name": "htim11.ChannelNState[0]",
                 "type": 2
             },
             {
-                "address": "0x20001287",
+                "address": "0x20001257",
                 "name": "htim11.ChannelNState[1]",
                 "type": 2
             },
             {
-                "address": "0x20001288",
+                "address": "0x20001258",
                 "name": "htim11.ChannelNState[2]",
                 "type": 2
             },
             {
-                "address": "0x20001289",
+                "address": "0x20001259",
                 "name": "htim11.ChannelNState[3]",
                 "type": 2
             },
             {
-                "address": "0x20001282",
+                "address": "0x20001252",
                 "name": "htim11.ChannelState[0]",
                 "type": 2
             },
             {
-                "address": "0x20001283",
+                "address": "0x20001253",
                 "name": "htim11.ChannelState[1]",
                 "type": 2
             },
             {
-                "address": "0x20001284",
+                "address": "0x20001254",
                 "name": "htim11.ChannelState[2]",
                 "type": 2
             },
             {
-                "address": "0x20001285",
+                "address": "0x20001255",
                 "name": "htim11.ChannelState[3]",
                 "type": 2
             },
             {
-                "address": "0x2000128a",
+                "address": "0x2000125a",
                 "name": "htim11.DMABurstState",
                 "type": 2
             },
             {
-                "address": "0x20001264",
+                "address": "0x20001234",
                 "name": "htim11.hdma[0]",
                 "type": 5
             },
             {
-                "address": "0x20001268",
+                "address": "0x20001238",
                 "name": "htim11.hdma[1]",
                 "type": 5
             },
             {
-                "address": "0x2000126c",
+                "address": "0x2000123c",
                 "name": "htim11.hdma[2]",
                 "type": 5
             },
             {
-                "address": "0x20001270",
+                "address": "0x20001240",
                 "name": "htim11.hdma[3]",
                 "type": 5
             },
             {
-                "address": "0x20001274",
+                "address": "0x20001244",
                 "name": "htim11.hdma[4]",
                 "type": 5
             },
             {
-                "address": "0x20001278",
+                "address": "0x20001248",
                 "name": "htim11.hdma[5]",
                 "type": 5
             },
             {
-                "address": "0x2000127c",
+                "address": "0x2000124c",
                 "name": "htim11.hdma[6]",
                 "type": 5
             },
             {
-                "address": "0x2000125c",
+                "address": "0x2000122c",
                 "name": "htim11.Init.AutoReloadPreload",
                 "type": 5
             },
             {
-                "address": "0x20001254",
+                "address": "0x20001224",
                 "name": "htim11.Init.ClockDivision",
                 "type": 5
             },
             {
-                "address": "0x2000124c",
+                "address": "0x2000121c",
                 "name": "htim11.Init.CounterMode",
                 "type": 5
             },
             {
-                "address": "0x20001250",
+                "address": "0x20001220",
                 "name": "htim11.Init.Period",
                 "type": 5
             },
             {
-                "address": "0x20001248",
+                "address": "0x20001218",
                 "name": "htim11.Init.Prescaler",
                 "type": 5
             },
             {
-                "address": "0x20001258",
+                "address": "0x20001228",
                 "name": "htim11.Init.RepetitionCounter",
                 "type": 5
             },
             {
-                "address": "0x20001244",
+                "address": "0x20001214",
                 "name": "htim11.Instance",
                 "type": 5
             },
             {
-                "address": "0x20001280",
+                "address": "0x20001250",
                 "name": "htim11.Lock",
                 "type": 2
             },
             {
-                "address": "0x20001281",
+                "address": "0x20001251",
                 "name": "htim11.State",
                 "type": 2
             },
             {
-                "address": "0x200012a8",
-                "name": "htim4.Channel",
+                "address": "0x20001278",
+                "name": "htim2.Channel",
                 "type": 2
             },
             {
-                "address": "0x200012ce",
-                "name": "htim4.ChannelNState[0]",
+                "address": "0x2000129e",
+                "name": "htim2.ChannelNState[0]",
                 "type": 2
             },
             {
-                "address": "0x200012cf",
-                "name": "htim4.ChannelNState[1]",
+                "address": "0x2000129f",
+                "name": "htim2.ChannelNState[1]",
                 "type": 2
-            },
-            {
-                "address": "0x200012d0",
-                "name": "htim4.ChannelNState[2]",
-                "type": 2
-            },
-            {
-                "address": "0x200012d1",
-                "name": "htim4.ChannelNState[3]",
-                "type": 2
-            },
-            {
-                "address": "0x200012ca",
-                "name": "htim4.ChannelState[0]",
-                "type": 2
-            },
-            {
-                "address": "0x200012cb",
-                "name": "htim4.ChannelState[1]",
-                "type": 2
-            },
-            {
-                "address": "0x200012cc",
-                "name": "htim4.ChannelState[2]",
-                "type": 2
-            },
-            {
-                "address": "0x200012cd",
-                "name": "htim4.ChannelState[3]",
-                "type": 2
-            },
-            {
-                "address": "0x200012d2",
-                "name": "htim4.DMABurstState",
-                "type": 2
-            },
-            {
-                "address": "0x200012ac",
-                "name": "htim4.hdma[0]",
-                "type": 5
-            },
-            {
-                "address": "0x200012b0",
-                "name": "htim4.hdma[1]",
-                "type": 5
-            },
-            {
-                "address": "0x200012b4",
-                "name": "htim4.hdma[2]",
-                "type": 5
-            },
-            {
-                "address": "0x200012b8",
-                "name": "htim4.hdma[3]",
-                "type": 5
-            },
-            {
-                "address": "0x200012bc",
-                "name": "htim4.hdma[4]",
-                "type": 5
-            },
-            {
-                "address": "0x200012c0",
-                "name": "htim4.hdma[5]",
-                "type": 5
-            },
-            {
-                "address": "0x200012c4",
-                "name": "htim4.hdma[6]",
-                "type": 5
-            },
-            {
-                "address": "0x200012a4",
-                "name": "htim4.Init.AutoReloadPreload",
-                "type": 5
-            },
-            {
-                "address": "0x2000129c",
-                "name": "htim4.Init.ClockDivision",
-                "type": 5
-            },
-            {
-                "address": "0x20001294",
-                "name": "htim4.Init.CounterMode",
-                "type": 5
-            },
-            {
-                "address": "0x20001298",
-                "name": "htim4.Init.Period",
-                "type": 5
-            },
-            {
-                "address": "0x20001290",
-                "name": "htim4.Init.Prescaler",
-                "type": 5
             },
             {
                 "address": "0x200012a0",
-                "name": "htim4.Init.RepetitionCounter",
+                "name": "htim2.ChannelNState[2]",
+                "type": 2
+            },
+            {
+                "address": "0x200012a1",
+                "name": "htim2.ChannelNState[3]",
+                "type": 2
+            },
+            {
+                "address": "0x2000129a",
+                "name": "htim2.ChannelState[0]",
+                "type": 2
+            },
+            {
+                "address": "0x2000129b",
+                "name": "htim2.ChannelState[1]",
+                "type": 2
+            },
+            {
+                "address": "0x2000129c",
+                "name": "htim2.ChannelState[2]",
+                "type": 2
+            },
+            {
+                "address": "0x2000129d",
+                "name": "htim2.ChannelState[3]",
+                "type": 2
+            },
+            {
+                "address": "0x200012a2",
+                "name": "htim2.DMABurstState",
+                "type": 2
+            },
+            {
+                "address": "0x2000127c",
+                "name": "htim2.hdma[0]",
+                "type": 5
+            },
+            {
+                "address": "0x20001280",
+                "name": "htim2.hdma[1]",
+                "type": 5
+            },
+            {
+                "address": "0x20001284",
+                "name": "htim2.hdma[2]",
+                "type": 5
+            },
+            {
+                "address": "0x20001288",
+                "name": "htim2.hdma[3]",
                 "type": 5
             },
             {
                 "address": "0x2000128c",
-                "name": "htim4.Instance",
+                "name": "htim2.hdma[4]",
+                "type": 5
+            },
+            {
+                "address": "0x20001290",
+                "name": "htim2.hdma[5]",
+                "type": 5
+            },
+            {
+                "address": "0x20001294",
+                "name": "htim2.hdma[6]",
+                "type": 5
+            },
+            {
+                "address": "0x20001274",
+                "name": "htim2.Init.AutoReloadPreload",
+                "type": 5
+            },
+            {
+                "address": "0x2000126c",
+                "name": "htim2.Init.ClockDivision",
+                "type": 5
+            },
+            {
+                "address": "0x20001264",
+                "name": "htim2.Init.CounterMode",
+                "type": 5
+            },
+            {
+                "address": "0x20001268",
+                "name": "htim2.Init.Period",
+                "type": 5
+            },
+            {
+                "address": "0x20001260",
+                "name": "htim2.Init.Prescaler",
+                "type": 5
+            },
+            {
+                "address": "0x20001270",
+                "name": "htim2.Init.RepetitionCounter",
+                "type": 5
+            },
+            {
+                "address": "0x2000125c",
+                "name": "htim2.Instance",
+                "type": 5
+            },
+            {
+                "address": "0x20001298",
+                "name": "htim2.Lock",
+                "type": 2
+            },
+            {
+                "address": "0x20001299",
+                "name": "htim2.State",
+                "type": 2
+            },
+            {
+                "address": "0x200012c0",
+                "name": "htim4.Channel",
+                "type": 2
+            },
+            {
+                "address": "0x200012e6",
+                "name": "htim4.ChannelNState[0]",
+                "type": 2
+            },
+            {
+                "address": "0x200012e7",
+                "name": "htim4.ChannelNState[1]",
+                "type": 2
+            },
+            {
+                "address": "0x200012e8",
+                "name": "htim4.ChannelNState[2]",
+                "type": 2
+            },
+            {
+                "address": "0x200012e9",
+                "name": "htim4.ChannelNState[3]",
+                "type": 2
+            },
+            {
+                "address": "0x200012e2",
+                "name": "htim4.ChannelState[0]",
+                "type": 2
+            },
+            {
+                "address": "0x200012e3",
+                "name": "htim4.ChannelState[1]",
+                "type": 2
+            },
+            {
+                "address": "0x200012e4",
+                "name": "htim4.ChannelState[2]",
+                "type": 2
+            },
+            {
+                "address": "0x200012e5",
+                "name": "htim4.ChannelState[3]",
+                "type": 2
+            },
+            {
+                "address": "0x200012ea",
+                "name": "htim4.DMABurstState",
+                "type": 2
+            },
+            {
+                "address": "0x200012c4",
+                "name": "htim4.hdma[0]",
                 "type": 5
             },
             {
                 "address": "0x200012c8",
-                "name": "htim4.Lock",
-                "type": 2
-            },
-            {
-                "address": "0x200012c9",
-                "name": "htim4.State",
-                "type": 2
-            },
-            {
-                "address": "0x20001314",
-                "name": "huart2.ErrorCode",
+                "name": "htim4.hdma[1]",
                 "type": 5
             },
             {
-                "address": "0x20001311",
-                "name": "huart2.gState",
-                "type": 2
-            },
-            {
-                "address": "0x2000130c",
-                "name": "huart2.hdmarx",
+                "address": "0x200012cc",
+                "name": "htim4.hdma[2]",
                 "type": 5
             },
             {
-                "address": "0x20001308",
-                "name": "huart2.hdmatx",
-                "type": 5
-            },
-            {
-                "address": "0x200012d8",
-                "name": "huart2.Init.BaudRate",
-                "type": 5
-            },
-            {
-                "address": "0x200012ec",
-                "name": "huart2.Init.HwFlowCtl",
-                "type": 5
-            },
-            {
-                "address": "0x200012e8",
-                "name": "huart2.Init.Mode",
-                "type": 5
-            },
-            {
-                "address": "0x200012f0",
-                "name": "huart2.Init.OverSampling",
-                "type": 5
-            },
-            {
-                "address": "0x200012e4",
-                "name": "huart2.Init.Parity",
-                "type": 5
-            },
-            {
-                "address": "0x200012e0",
-                "name": "huart2.Init.StopBits",
-                "type": 5
-            },
-            {
-                "address": "0x200012dc",
-                "name": "huart2.Init.WordLength",
+                "address": "0x200012d0",
+                "name": "htim4.hdma[3]",
                 "type": 5
             },
             {
                 "address": "0x200012d4",
-                "name": "huart2.Instance",
+                "name": "htim4.hdma[4]",
                 "type": 5
             },
             {
-                "address": "0x20001310",
-                "name": "huart2.Lock",
+                "address": "0x200012d8",
+                "name": "htim4.hdma[5]",
+                "type": 5
+            },
+            {
+                "address": "0x200012dc",
+                "name": "htim4.hdma[6]",
+                "type": 5
+            },
+            {
+                "address": "0x200012bc",
+                "name": "htim4.Init.AutoReloadPreload",
+                "type": 5
+            },
+            {
+                "address": "0x200012b4",
+                "name": "htim4.Init.ClockDivision",
+                "type": 5
+            },
+            {
+                "address": "0x200012ac",
+                "name": "htim4.Init.CounterMode",
+                "type": 5
+            },
+            {
+                "address": "0x200012b0",
+                "name": "htim4.Init.Period",
+                "type": 5
+            },
+            {
+                "address": "0x200012a8",
+                "name": "htim4.Init.Prescaler",
+                "type": 5
+            },
+            {
+                "address": "0x200012b8",
+                "name": "htim4.Init.RepetitionCounter",
+                "type": 5
+            },
+            {
+                "address": "0x200012a4",
+                "name": "htim4.Instance",
+                "type": 5
+            },
+            {
+                "address": "0x200012e0",
+                "name": "htim4.Lock",
                 "type": 2
             },
             {
-                "address": "0x200012fc",
-                "name": "huart2.pRxBuffPtr",
+                "address": "0x200012e1",
+                "name": "htim4.State",
+                "type": 2
+            },
+            {
+                "address": "0x2000132c",
+                "name": "huart2.ErrorCode",
                 "type": 5
             },
             {
-                "address": "0x200012f4",
-                "name": "huart2.pTxBuffPtr",
+                "address": "0x20001329",
+                "name": "huart2.gState",
+                "type": 2
+            },
+            {
+                "address": "0x20001324",
+                "name": "huart2.hdmarx",
+                "type": 5
+            },
+            {
+                "address": "0x20001320",
+                "name": "huart2.hdmatx",
+                "type": 5
+            },
+            {
+                "address": "0x200012f0",
+                "name": "huart2.Init.BaudRate",
                 "type": 5
             },
             {
                 "address": "0x20001304",
+                "name": "huart2.Init.HwFlowCtl",
+                "type": 5
+            },
+            {
+                "address": "0x20001300",
+                "name": "huart2.Init.Mode",
+                "type": 5
+            },
+            {
+                "address": "0x20001308",
+                "name": "huart2.Init.OverSampling",
+                "type": 5
+            },
+            {
+                "address": "0x200012fc",
+                "name": "huart2.Init.Parity",
+                "type": 5
+            },
+            {
+                "address": "0x200012f8",
+                "name": "huart2.Init.StopBits",
+                "type": 5
+            },
+            {
+                "address": "0x200012f4",
+                "name": "huart2.Init.WordLength",
+                "type": 5
+            },
+            {
+                "address": "0x200012ec",
+                "name": "huart2.Instance",
+                "type": 5
+            },
+            {
+                "address": "0x20001328",
+                "name": "huart2.Lock",
+                "type": 2
+            },
+            {
+                "address": "0x20001314",
+                "name": "huart2.pRxBuffPtr",
+                "type": 5
+            },
+            {
+                "address": "0x2000130c",
+                "name": "huart2.pTxBuffPtr",
+                "type": 5
+            },
+            {
+                "address": "0x2000131c",
                 "name": "huart2.ReceptionType",
                 "type": 5
             },
             {
-                "address": "0x20001312",
+                "address": "0x2000132a",
                 "name": "huart2.RxState",
                 "type": 2
             },
             {
-                "address": "0x20001302",
+                "address": "0x2000131a",
                 "name": "huart2.RxXferCount",
                 "type": 3
             },
             {
-                "address": "0x20001300",
+                "address": "0x20001318",
                 "name": "huart2.RxXferSize",
                 "type": 3
             },
             {
-                "address": "0x200012fa",
+                "address": "0x20001312",
                 "name": "huart2.TxXferCount",
                 "type": 3
             },
             {
-                "address": "0x200012f8",
+                "address": "0x20001310",
                 "name": "huart2.TxXferSize",
                 "type": 3
             },
             {
-                "address": "0x20001340",
+                "address": "0x20001344",
                 "name": "maxon_params.J",
-                "type": 10
+                "type": 9
             },
             {
-                "address": "0x20001338",
+                "address": "0x20001340",
                 "name": "maxon_params.Km",
-                "type": 10
+                "type": 9
             },
             {
-                "address": "0x20001330",
+                "address": "0x2000133c",
                 "name": "maxon_params.Kw",
-                "type": 10
+                "type": 9
             },
             {
-                "address": "0x20001320",
+                "address": "0x20001334",
                 "name": "maxon_params.L",
-                "type": 10
+                "type": 9
             },
             {
                 "address": "0x20001348",
                 "name": "maxon_params.Lam",
-                "type": 10
+                "type": 9
             },
             {
-                "address": "0x20001328",
+                "address": "0x20001338",
                 "name": "maxon_params.R",
-                "type": 10
+                "type": 9
             },
             {
-                "address": "0x20001350",
+                "address": "0x2000134c",
                 "name": "maxon_params.ticks_per_round",
                 "type": 5
             },
             {
-                "address": "0x200013a0",
+                "address": "0x200013b8",
                 "name": "motor._cmd.M_ext",
-                "type": 10,
+                "type": 9,
                 "checked": false
             },
             {
-                "address": "0x20001398",
+                "address": "0x200013b4",
                 "name": "motor._cmd.u",
-                "type": 10
+                "type": 9
             },
             {
-                "address": "0x200013c0",
+                "address": "0x200013c8",
                 "name": "motor._data.dw",
-                "type": 10,
+                "type": 9,
+                "checked": true
+            },
+            {
+                "address": "0x200013d4",
+                "name": "motor._data.edw",
+                "type": 9,
                 "checked": true
             },
             {
                 "address": "0x200013d8",
-                "name": "motor._data.edw",
-                "type": 10,
+                "name": "motor._data.eI",
+                "type": 9,
                 "checked": true
             },
             {
                 "address": "0x200013d0",
                 "name": "motor._data.ew",
-                "type": 10,
+                "type": 9,
                 "checked": true
             },
             {
-                "address": "0x200013c8",
+                "address": "0x200013cc",
                 "name": "motor._data.I",
-                "type": 10
+                "type": 9,
+                "checked": false
             },
             {
-                "address": "0x200013a8",
+                "address": "0x200013bc",
                 "name": "motor._data.q",
-                "type": 10,
+                "type": 9,
                 "checked": true
             },
             {
-                "address": "0x200013b0",
+                "address": "0x200013c0",
                 "name": "motor._data.q_deg",
-                "type": 10
+                "type": 9
             },
             {
-                "address": "0x200013b8",
+                "address": "0x200013dc",
+                "name": "motor._data.ticks",
+                "type": 6
+            },
+            {
+                "address": "0x200013c4",
                 "name": "motor._data.w",
-                "type": 10,
+                "type": 9,
                 "checked": true
             },
             {
-                "address": "0x20001530",
+                "address": "0x20001488",
                 "name": "motor._dt",
                 "type": 9,
                 "checked": true
             },
             {
-                "address": "0x20001528",
+                "address": "0x20001484",
                 "name": "motor._kf.Mext_plot",
-                "type": 10,
+                "type": 9,
                 "checked": true
             },
             {
-                "address": "0x20001380",
+                "address": "0x200013a8",
                 "name": "motor._param.J",
-                "type": 10
+                "type": 9
             },
             {
-                "address": "0x20001378",
+                "address": "0x200013a4",
                 "name": "motor._param.Km",
-                "type": 10
+                "type": 9
             },
             {
-                "address": "0x20001370",
+                "address": "0x200013a0",
                 "name": "motor._param.Kw",
-                "type": 10
+                "type": 9
             },
             {
-                "address": "0x20001360",
+                "address": "0x20001398",
                 "name": "motor._param.L",
-                "type": 10
+                "type": 9
             },
             {
-                "address": "0x20001388",
+                "address": "0x200013ac",
                 "name": "motor._param.Lam",
-                "type": 10
+                "type": 9
             },
             {
-                "address": "0x20001368",
+                "address": "0x2000139c",
                 "name": "motor._param.R",
-                "type": 10
+                "type": 9
             },
             {
-                "address": "0x20001390",
+                "address": "0x200013b0",
                 "name": "motor._param.ticks_per_round",
                 "type": 5
             },
             {
                 "address": "0x20001358",
+                "name": "motor.in1.pin",
+                "type": 3
+            },
+            {
+                "address": "0x20001354",
+                "name": "motor.in1.port",
+                "type": 5
+            },
+            {
+                "address": "0x2000135c",
+                "name": "motor.in1.tim",
+                "type": 5
+            },
+            {
+                "address": "0x20001360",
+                "name": "motor.in1.tim_channel",
+                "type": 5
+            },
+            {
+                "address": "0x20001368",
+                "name": "motor.in2.pin",
+                "type": 3
+            },
+            {
+                "address": "0x20001364",
+                "name": "motor.in2.port",
+                "type": 5
+            },
+            {
+                "address": "0x2000136c",
+                "name": "motor.in2.tim",
+                "type": 5
+            },
+            {
+                "address": "0x20001370",
+                "name": "motor.in2.tim_channel",
+                "type": 5
+            },
+            {
+                "address": "0x20001395",
+                "name": "motor.motor_num",
+                "type": 2
+            },
+            {
+                "address": "0x20001378",
+                "name": "motor.pwm.pin",
+                "type": 3
+            },
+            {
+                "address": "0x20001374",
+                "name": "motor.pwm.port",
+                "type": 5
+            },
+            {
+                "address": "0x2000137c",
+                "name": "motor.pwm.tim",
+                "type": 5
+            },
+            {
+                "address": "0x20001380",
+                "name": "motor.pwm.tim_channel",
+                "type": 5
+            },
+            {
+                "address": "0x20001394",
+                "name": "motor.side_sign",
+                "type": 2
+            },
+            {
+                "address": "0x20001388",
+                "name": "motor.stndby.pin",
+                "type": 3
+            },
+            {
+                "address": "0x20001384",
+                "name": "motor.stndby.port",
+                "type": 5
+            },
+            {
+                "address": "0x2000138c",
+                "name": "motor.stndby.tim",
+                "type": 5
+            },
+            {
+                "address": "0x20001390",
+                "name": "motor.stndby.tim_channel",
+                "type": 5
+            },
+            {
+                "address": "0x20001350",
                 "name": "motor.time_start",
                 "type": 5
             },
             {
-                "address": "0x20001538",
+                "address": "0x200014f4",
+                "name": "motor_left._cmd.M_ext",
+                "type": 9
+            },
+            {
+                "address": "0x200014f0",
+                "name": "motor_left._cmd.u",
+                "type": 9
+            },
+            {
+                "address": "0x20001504",
+                "name": "motor_left._data.dw",
+                "type": 9
+            },
+            {
+                "address": "0x20001510",
+                "name": "motor_left._data.edw",
+                "type": 9
+            },
+            {
+                "address": "0x20001514",
+                "name": "motor_left._data.eI",
+                "type": 9
+            },
+            {
+                "address": "0x2000150c",
+                "name": "motor_left._data.ew",
+                "type": 9
+            },
+            {
+                "address": "0x20001508",
+                "name": "motor_left._data.I",
+                "type": 9
+            },
+            {
+                "address": "0x200014f8",
+                "name": "motor_left._data.q",
+                "type": 9
+            },
+            {
+                "address": "0x200014fc",
+                "name": "motor_left._data.q_deg",
+                "type": 9
+            },
+            {
+                "address": "0x20001518",
+                "name": "motor_left._data.ticks",
+                "type": 6
+            },
+            {
+                "address": "0x20001500",
+                "name": "motor_left._data.w",
+                "type": 9
+            },
+            {
+                "address": "0x200015c4",
+                "name": "motor_left._dt",
+                "type": 9
+            },
+            {
+                "address": "0x200015c0",
+                "name": "motor_left._kf.Mext_plot",
+                "type": 9
+            },
+            {
+                "address": "0x200014e4",
+                "name": "motor_left._param.J",
+                "type": 9
+            },
+            {
+                "address": "0x200014e0",
+                "name": "motor_left._param.Km",
+                "type": 9
+            },
+            {
+                "address": "0x200014dc",
+                "name": "motor_left._param.Kw",
+                "type": 9
+            },
+            {
+                "address": "0x200014d4",
+                "name": "motor_left._param.L",
+                "type": 9
+            },
+            {
+                "address": "0x200014e8",
+                "name": "motor_left._param.Lam",
+                "type": 9
+            },
+            {
+                "address": "0x200014d8",
+                "name": "motor_left._param.R",
+                "type": 9
+            },
+            {
+                "address": "0x200014ec",
+                "name": "motor_left._param.ticks_per_round",
+                "type": 5
+            },
+            {
+                "address": "0x20001494",
+                "name": "motor_left.in1.pin",
+                "type": 3
+            },
+            {
+                "address": "0x20001490",
+                "name": "motor_left.in1.port",
+                "type": 5
+            },
+            {
+                "address": "0x20001498",
+                "name": "motor_left.in1.tim",
+                "type": 5
+            },
+            {
+                "address": "0x2000149c",
+                "name": "motor_left.in1.tim_channel",
+                "type": 5
+            },
+            {
+                "address": "0x200014a4",
+                "name": "motor_left.in2.pin",
+                "type": 3
+            },
+            {
+                "address": "0x200014a0",
+                "name": "motor_left.in2.port",
+                "type": 5
+            },
+            {
+                "address": "0x200014a8",
+                "name": "motor_left.in2.tim",
+                "type": 5
+            },
+            {
+                "address": "0x200014ac",
+                "name": "motor_left.in2.tim_channel",
+                "type": 5
+            },
+            {
+                "address": "0x200014d1",
+                "name": "motor_left.motor_num",
+                "type": 2
+            },
+            {
+                "address": "0x200014b4",
+                "name": "motor_left.pwm.pin",
+                "type": 3
+            },
+            {
+                "address": "0x200014b0",
+                "name": "motor_left.pwm.port",
+                "type": 5
+            },
+            {
+                "address": "0x200014b8",
+                "name": "motor_left.pwm.tim",
+                "type": 5
+            },
+            {
+                "address": "0x200014bc",
+                "name": "motor_left.pwm.tim_channel",
+                "type": 5
+            },
+            {
+                "address": "0x200014d0",
+                "name": "motor_left.side_sign",
+                "type": 2
+            },
+            {
+                "address": "0x200014c4",
+                "name": "motor_left.stndby.pin",
+                "type": 3
+            },
+            {
+                "address": "0x200014c0",
+                "name": "motor_left.stndby.port",
+                "type": 5
+            },
+            {
+                "address": "0x200014c8",
+                "name": "motor_left.stndby.tim",
+                "type": 5
+            },
+            {
+                "address": "0x200014cc",
+                "name": "motor_left.stndby.tim_channel",
+                "type": 5
+            },
+            {
+                "address": "0x2000148c",
+                "name": "motor_left.time_start",
+                "type": 5
+            },
+            {
+                "address": "0x200015c8",
                 "name": "reg",
                 "type": 1
             },
             {
-                "address": "0x2000153c",
+                "address": "0x200015cc",
                 "name": "st_ms",
                 "type": 5
             },
@@ -1458,12 +1930,17 @@
                 "type": 5
             },
             {
-                "address": "0x20001540",
-                "name": "ticks",
+                "address": "0x200015d0",
+                "name": "ticks[0]",
                 "type": 6
             },
             {
-                "address": "0x20001544",
+                "address": "0x200015d4",
+                "name": "ticks[1]",
+                "type": 6
+            },
+            {
+                "address": "0x200015d8",
                 "name": "uwTick",
                 "type": 5
             },
@@ -1478,7 +1955,7 @@
                 "type": 5
             },
             {
-                "address": "0x20001548",
+                "address": "0x200015dc",
                 "name": "var",
                 "type": 5,
                 "checked": false
@@ -1486,8 +1963,8 @@
         ],
         "expand": true,
         "filename": "balance_robot_stm.axf",
-        "exeModifiedTime": 1659994283140,
-        "configLastUpdate": 1659994513682
+        "exeModifiedTime": 1660593344673,
+        "configLastUpdate": 1660593381143
     },
     {
         "id": "17d09b07.741a55",

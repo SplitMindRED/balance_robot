@@ -61,6 +61,7 @@
     "stop_token": "cpp",
     "streambuf": "cpp",
     "thread": "cpp",
-    "core": "cpp"
+    "core": "cpp",
+    "tim.h": "c"
   }
 }
