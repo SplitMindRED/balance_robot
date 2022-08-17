@@ -4,7 +4,7 @@ import csv
 import pandas as pd
 from pathlib import Path
 
-result_csv_filename = "chi_sin_stall_test.csv"
+result_csv_filename = "rchi_sin1.csv"
 path_to_csv_save = Path("../../matlab/csv/" + result_csv_filename)
 
 

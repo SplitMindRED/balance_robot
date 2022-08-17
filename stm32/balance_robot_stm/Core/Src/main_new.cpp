@@ -61,17 +61,20 @@ void setup()
   chi_params.J = 0.0011;
   chi_params.R = 11.8227;
   chi_params.Kw = 0.2923;
-  chi_params.Km = 0.2923;
+  // chi_params.Km = 0.2923;
+  // chi_params.Km = 0.4032;
+  chi_params.Km = 0.18395;
   chi_params.Lam = 0.0019;
   chi_params.ticks_per_round = 1180.0;
 
-  // motor_left.setParams(maxon_params);
   motor_left.setParams(chi_params);
   motor_right.setParams(chi_params);
 
   motor_left.motor_num = 0;
   motor_right.motor_num = 1;
 
+  changeConfig();
+  HAL_Delay(100);
   getData();
   HAL_Delay(100);
   printData();
@@ -109,7 +112,7 @@ void testButton(void)
     turnLed(0);
   }
 }
-void motorStepTest()
+void motorStepTest(MotorDriver& driver)
 {
   if (is_button_pressed)
   {
@@ -117,16 +120,16 @@ void motorStepTest()
     static bool start = 0;
     static unsigned long t_start = 0;
     static unsigned long t_prev = 0;
-    static uint16_t delta_t = 2500; // ms
+    static uint16_t delta_t = 5000; // ms
     static uint8_t num_of_steps = 10;
     static uint8_t step = 0;
 
     if (start == 0)
     {
-      motor_left.standBy(0);
+      driver.standBy(0);
       t_start = getStMcs();
       start = 1;
-      motor_left.time_start = getStMcs();
+      driver.time_start = getStMcs();
       t_prev = HAL_GetTick();
     }
 
@@ -141,27 +144,27 @@ void motorStepTest()
       }
     }
 
-    motor_left.setVoltage(u);
-    motor_left.setMext(0);
-    motor_left.evalSensorData();
+    driver.setVoltage(u);
+    driver.setMext(0);
+    driver.evalSensorData();
     // motor_left.runKalmanFilter();
 
     Eigen::Vector3f x;
     // x = motor_left.getKalmanState();
 
-    readCurrent();
+    // readCurrent();
 
     UART_printStr("t: ");
     UART_print(getStMcs());
     // UART_printStr(" ticks: ");
     // UART_print(ticks);
     UART_printStr(" q: ");
-    UART_printDiv(motor_left.getData().q);
+    UART_printDiv(driver.getData().q);
     UART_printStr(" w: ");
-    UART_printDiv(motor_left.getData().w);
+    UART_printDiv(driver.getData().w);
     // UART_printDivLn(motor_left.getData().w);
     UART_printStr(" dw: ");
-    UART_printDiv(motor_left.getData().dw);
+    UART_printDiv(driver.getData().dw);
     // UART_printStr(" wk: ");
     // UART_printDiv(x(0));
     // UART_printStr(" dwk: ");
@@ -169,21 +172,23 @@ void motorStepTest()
     UART_printStr(" u: ");
     UART_print(u);
     UART_printStr(" I: ");
-    UART_printDivLn(current / 10.0 / 1000.0);
+    // UART_printDivLn(current / 10.0 / 1000.0);
+    UART_printDivLn(0);
   }
 }
 
-void motorSinTest()
+void motorSinTest(MotorDriver& driver)
 {
   if (is_button_pressed)
   {
     static unsigned long ms = 0;
     static float w = 1;
+    // static float w = 0.5e-1;
     // static float A = 6.0 / 12.0 * 100.0;
     // static float B = 6.0 / 12.0 * 100.0;
     static float A = 3.0 / 6.0 * 100.0;
     static float B = 3.0 / 6.0 * 100.0;
-    static float u = 0;
+    static float u = 0.0;
     static float fi = 3.1415;
     static float t = 0;
 
@@ -192,48 +197,155 @@ void motorSinTest()
 
     if (start == 0)
     {
-      motor_left.standBy(0);
+      driver.standBy(0);
       // motor_left.shortBreak();
       // t_start = HAL_GetTick();
       t_start = getStMcs();
       start = 1;
       // motor_left.time_start = getStMcs() + HAL_GetTick();
-      motor_left.time_start = getStMcs();
+      driver.time_start = getStMcs();
     }
 
     ms = HAL_GetTick();
-    u = motor_left.generateCos(t_start, A, B, w, 3.1415);
+    u = -driver.generateCos(t_start, A, B, w, 3.1415);
     // u = generateRamp(100, 2);
-    // u = 100;
+    // u = -100;
 
-    motor_left.setVoltage(u);
+    driver.setVoltage(u);
     // motor_left.setMext(-12.3e-3);
-    motor_left.evalSensorData();
-    motor_left.runKalmanFilter();
+    driver.evalSensorData();
+    driver.runKalmanFilter();
 
     Eigen::Vector3f x;
-    x = motor_left.getKalmanState();
+    x = driver.getKalmanState();
 
     // readCurrent();
 
-    // UART_printStr("t: ");
-    // UART_print(getStMcs());
-    // UART_printStr(" q: ");
-    // UART_printDiv(motor_left.getData().q);
-    // UART_printStr(" w: ");
-    // UART_printDiv(motor_left.getData().w);
-    // // UART_printDiv(motor_left.getData().ew);
-    // UART_printStr(" dw: ");
-    // UART_printDiv(motor_left.getData().dw);
-    // // UART_printDiv(motor_left.getData().edw);
-    // // UART_printStr(" wk: ");
-    // // UART_printDiv(x(0));
-    // // UART_printStr(" dwk: ");
-    // // UART_printDivLn(x(1));
-    // UART_printStr(" u: ");
-    // UART_print(u);
+    UART_printStr("t: ");
+    UART_print(getStMcs());
+    UART_printStr(" q: ");
+    UART_printDiv(driver.getData().q);
+    UART_printStr(" w: ");
+    UART_printDiv(driver.getData().w);
+    // UART_printDiv(motor_left.getData().ew);
+    UART_printStr(" dw: ");
+    UART_printDiv(driver.getData().dw);
+    // UART_printDiv(motor_left.getData().edw);
+    // UART_printStr(" wk: ");
+    // UART_printDiv(x(0));
+    // UART_printStr(" dwk: ");
+    // UART_printDivLn(x(1));
+    UART_printStr(" u: ");
+    UART_print(u);
+    UART_printStr(" eI: ");
+    UART_printDivLn(driver.getData().eI);
     // UART_printStr(" I: ");
     // UART_printDivLn(current / 10.0 / 1000.0);
+    // UART_printDivLn(0);
+  }
+}
+
+void testTorqueControl(MotorDriver& driver)
+{
+  if (is_button_pressed)
+  {
+    static float M_des = 0;
+    static float M_act = 0;
+    static float M_prev = 0;
+    static unsigned long ms = 0;
+    static float w = 1;
+    // static float A = 6.0 / 12.0 * 100.0;
+    // static float B = 6.0 / 12.0 * 100.0;
+    static float A = 3.0 / 6.0 * 100.0;
+    static float B = 3.0 / 6.0 * 100.0;
+    static float u = 0.0;
+    static float fi = 3.1415;
+    static float t = 0;
+    static unsigned long t_prev = 0;
+
+    static bool start = 0;
+    static unsigned long t_start = 0;
+
+    static float Kp = 5e3;
+    static float Ki = 5e2;
+    static float Kd = 1e1;
+    static float sum = 0;
+    static float dt = 0;
+    static float sum_max = 0.5;
+
+    if (start == 0)
+    {
+      driver.standBy(0);
+      t_start = getStMcs();
+      start = 1;
+      driver.time_start = getStMcs();
+      t_prev = t_start;
+      // u = 50;
+      u = 0.0;
+      driver.setVoltage(u);
+    }
+
+    driver.evalSensorData();
+    driver.runKalmanFilter();
+
+    M_act = driver.getData().M;
+
+    // M_act = 0.0022 * driver.getData().dw + 0.0029 * driver.getData().w;
+    // M_act = (u / 100 * 6.0 + 2.3041e-07 * driver.getData().w) / 85.7144;
+
+    t = getStMcs();
+
+    dt = (float)(t - t_prev) / 1e6; //sec
+
+    //Mdes 0.095 max
+    M_des = 0.11; //80g
+    // M_des = -0.073575; //50g
+    // M_des = -0.161865; //50g
+    // u = 100;
+    sum += M_des - M_act;
+
+    if (sum > sum_max)
+    {
+      sum = sum_max;
+    }
+
+    if (sum < -sum_max)
+    {
+      sum = -sum_max;
+    }
+
+    u = Kp * (M_des - M_act) + Ki * sum + Kd * (0.0 - (M_act - M_prev) / dt) + 9;
+
+    if (u > 100)
+    {
+      u = 100;
+    }
+
+    if (u < -100)
+    {
+      u = -100;
+    }
+    // motor_left.setVoltage(u);
+    driver.setVoltage(u);
+
+    M_prev = M_act;
+    t_prev = t;
+
+    // readCurrent();
+
+    Eigen::Vector3f x;
+    x = driver.getKalmanState();
+
+    UART_printStr("U: ");
+    UART_printDiv(u);
+    UART_printStr(" I: ");
+    UART_printDiv(current / 10.0 / 1000.0 - 0.048);
+    UART_printStr(" eI: ");
+    UART_printDiv(driver.getData().eI);
+    UART_printStr(" Mdes: ");
+    UART_printDiv(M_des);
+    UART_printStr(" Mact: ");
+    UART_printDivLn(M_act);
   }
 }
 
@@ -261,12 +373,13 @@ int main()
   UART_printStr(" ddq: ");
   UART_printDivLn(0.001);
 
-  // motor_left.standBy(1);
-  motor_left.standBy(0);
-  motor_left.setVoltage(100);
+  motor_left.standBy(1);
+  // motor_left.standBy(0);
+  // motor_left.setVoltage(60);
+  // motor_left.setVoltage(9);
 
-  motor_right.standBy(0);
-  motor_right.setVoltage(100);
+  // motor_right.standBy(0);
+  // motor_right.setVoltage(60);
 
   volatile static unsigned long ms = 0;
   volatile static unsigned long my_ms = 0;
@@ -280,19 +393,23 @@ int main()
     // UART_printStr(" I: ");
     // UART_printDivLn(current / 10.0 / 1000.0);
 
-    motor_left.evalSensorData();
-    motor_right.evalSensorData();
-    UART_printStr("1: ");
-    UART_print(motor_left.getData().ticks);
-    UART_printStr(" 2: ");
-    UART_printLn(motor_right.getData().ticks);
+    // motor_left.evalSensorData();
+    // motor_right.evalSensorData();
+    // UART_printStr("1: ");
+    // UART_print(motor_left.getData().ticks);
+    // UART_printStr(" 2: ");
+    // UART_printLn(motor_right.getData().ticks);
 
     testButton();
     // motor_data = motor_left.getData();
     w_est = motor_left.getData().ew;
-    motorSinTest();
-    // motorStepTest();
+    // motorSinTest(motor_right);
+    motorSinTest(motor_left);
+    // testTorqueControl(motor_right);
+    // testTorqueControl(motor_left);
+    // motorStepTest(motor_right);
 
+    // HAL_Delay(8);
     HAL_Delay(6);
 
     var++;
