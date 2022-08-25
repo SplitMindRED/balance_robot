@@ -4,7 +4,7 @@ import csv
 import pandas as pd
 from pathlib import Path
 
-result_csv_filename = "rchi_sin1.csv"
+result_csv_filename = "rchi_step_volt.csv"
 path_to_csv_save = Path("../../matlab/csv/" + result_csv_filename)
 
 
@@ -48,7 +48,7 @@ if __name__ == '__main__':
             # words = re.findall('[a-zA-Z]+', com_str)
 
             if numbers:
-               # print("NUMBERS", numbers)
+               print("NUMBERS", numbers)
                if not is_start:
                   if count == len(numbers):
                      data_frame = pd.concat([data_frame, pd.DataFrame([numbers], columns=words)])
